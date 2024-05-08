@@ -4,3 +4,9 @@ users to log their mood at regular intervals throughout the day. By doing so, th
 changing moods, which can be a valuable tool for personal growth and self-awareness.
 Overall, this app has the potential to be a valuable tool for anyone looking to gain a better understanding of their mood and how it
 changes over time.
+
+## Prerequisites
+- Node.js
+- Expo
+- NativeBase
+## Folder structure
