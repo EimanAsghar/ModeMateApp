@@ -1,7 +1,15 @@
 import { HStack, Container, IconButton } from "native-base";
 import {
-    View, Text, Image, Alert
+    View, Text, Image, Alert, FlatList
 } from 'react-native';
+
+const inspirationList = [
+    { icon: require('../../assets/images/BookOpenText.png'), message: 'Book Button pressed' },
+    { icon: require('../../assets/images/HandHeart.png'), message: 'Hand Heart Button pressed' },
+    { icon: require('../../assets/images/MusicNotes.png'), message: 'Music Button pressed' },
+    { icon: require('../../assets/images/PlayCircle.png'), message: 'play circule Button pressed' },
+
+]
 export default function InspirationCard() {
     return (
         <Container padding={4} margin={4}>
@@ -10,19 +18,20 @@ export default function InspirationCard() {
                     Inspirations...
                 </Text>
             </View>
-            <HStack space={4} alignItems="center" paddingTop={4} margin={2}>
-                <IconButton rounded={'xl'} bg={'secondary.400'} variant={'solid'} size={70} icon={<Image source={require('../../assets/images/BookOpenText.png')} />}
-                    onPress={() => Alert.alert('Book Button pressed')}
+            <FlatList
+                alignItems="center" 
+                paddingTop={4}
+                 margin={2}
+                data={inspirationList}
+                horizontal={true}
+                ItemSeparatorComponent={<View style={{ width: 10 }} />}
+                showsHorizontalScrollIndicator={false}
+                renderItem={({ item }) => <IconButton rounded={'xl'} bg={'secondary.400'} variant={'solid'} size={90} icon={<Image source={item.icon} />}
+                    onPress={() => Alert.alert(item.message)}
                 />
-                <IconButton   rounded={'xl'} bg={'secondary.400'} variant={'solid'} size={70} icon={<Image source={require('../../assets/images/HandHeart.png')} />}
-                    onPress={() => Alert.alert('Hand Heart Button pressed')}
-                />
-                <IconButton  rounded={'xl'} bg={'secondary.400'} variant={'solid'} size={70} icon={<Image source={require('../../assets/images/MusicNotes.png')} />}
-                    onPress={() => Alert.alert('Music Button pressed')} />
-                <IconButton  rounded={'xl'} bg={'secondary.400'} variant={'solid'} size={70} icon={<Image source={require('../../assets/images/PlayCircle.png')} />}
-                    onPress={() => Alert.alert('play circule Button pressed')} />
+                }
 
-            </HStack>
+            />
         </Container>
 
     );

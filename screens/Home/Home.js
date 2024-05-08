@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 import { Button, Icon, Center, VStack } from "native-base";
 import { Entypo } from '@expo/vector-icons';
-import { InspirationCard } from "../../components";
+import { InspirationCard, MoodCardDetails } from "../../components";
 const Home = () => {
 
     useEffect(() => {
@@ -19,6 +19,7 @@ const Home = () => {
             <View width={'100%'} height={'10%'} />
             <View width={'100%'} height={'70%'} >
                 <InspirationCard />
+                <MoodCardDetails/>
             </View>
             <View width={'100%'} height={'20%'}>
                 <Center>
