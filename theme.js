@@ -19,9 +19,16 @@ const theme = extendTheme({
                     return {
                         colors: '#F9F9FB',
                         bg: `${colorScheme}`,
-                        rounded: "4"
+                        rounded: "10"
                     };
                 }
+            },
+            sizes: {
+                _custom: {
+                    px: '12',
+                    py: '3'
+                }
+
             }
         }
     }

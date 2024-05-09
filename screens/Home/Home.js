@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import SplashScreen from "react-native-splash-screen";
 import {
-    View, Text, StyleSheet, Alert,
+    View, Text, Container
 } from 'react-native';
 import { Button, Icon, Center, VStack } from "native-base";
 import { Entypo } from '@expo/vector-icons';
 import { InspirationCard, MoodCardDetails } from "../../components";
-const Home = () => {
+const Home = ({ navigation }) => {
 
     useEffect(() => {
         if (SplashScreen) {
@@ -15,16 +15,15 @@ const Home = () => {
     }, [])
 
     return (
-        <VStack space={4} alignItems="center" width={'100%'} height={'100%'} >
-            <View width={'100%'} height={'10%'} />
-            <View width={'100%'} height={'70%'} >
+        <VStack space={4} alignItems="center" width={'100%'} height={'100%'} bg={'secondary.300'}>
+            <View width={'100%'} height={'80%'} >
                 <InspirationCard />
-                <MoodCardDetails/>
+                <MoodCardDetails />
             </View>
             <View width={'100%'} height={'20%'}>
                 <Center>
-                    <Button colorScheme="primary" variant="rounded" rightIcon={<Icon as={Entypo} name="plus" size="2xl" color={'white'} />}
-                        onPress={() => Alert.alert('Simple Button pressed')}>
+                    <Button  size="_custom" colorScheme="primary" variant="rounded" rightIcon={<Icon as={Entypo} name="plus" size="lg" color={'white'} />}
+                        onPress={() => navigation.navigate('AddMode')}>
                         <Text style={{ color: 'white' }}>
                             Log your mood
                         </Text>
@@ -36,7 +35,5 @@ const Home = () => {
 
     )
 }
-
-
 
 export default Home;
