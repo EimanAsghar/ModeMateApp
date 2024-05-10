@@ -11,9 +11,10 @@ import {
 } from 'react-native';
 
 const MoodCardDetails = () => {
+
     return (
         <Container padding={4} margin={4}>
-            <Text>
+            <Text fontSize={'lg'}>
                 May 2023
             </Text>
             <View paddingTop={4} margin={2} >

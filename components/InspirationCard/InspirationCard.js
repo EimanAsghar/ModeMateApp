@@ -1,6 +1,6 @@
-import { HStack, Container, IconButton } from "native-base";
+import { HStack, Container, IconButton, Text } from "native-base";
 import {
-    View, Text, Image, Alert, FlatList
+    View, Image, Alert, FlatList
 } from 'react-native';
 
 const inspirationList = [
@@ -14,7 +14,7 @@ export default function InspirationCard() {
     return (
         <Container padding={4} margin={4}>
             <View>
-                <Text>
+                <Text fontSize={'lg'} >
                     Inspirations...
                 </Text>
             </View>

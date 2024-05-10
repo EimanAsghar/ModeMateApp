@@ -8,6 +8,13 @@ import { Entypo } from '@expo/vector-icons';
 import { InspirationCard, MoodCardDetails } from "../../components";
 const Home = ({ navigation }) => {
 
+    const moodData = [
+        {date: '1 May 2024', mode: 'AWESOME', details: 'Joyful', note: "good day", icon: require('../../assets/images/bigsmile.png') },
+        {date: '2 May 2024', mode: 'Good', details: 'Joyful', note: "good day", icon: require('../../assets/images/smile_emoji.png') },
+        {date: '2 June 2024', mode: 'BAD', details: 'Heavy', note: "Not good day", icon: require('../../assets/images/sad.png') },
+        {date: '3 July 2024', mode: 'CRY', details: 'Heavy', note: "Not good day", icon: require('../../assets/images/cry.png') }
+    ]
+
     useEffect(() => {
         if (SplashScreen) {
             SplashScreen.hide();
@@ -18,7 +25,7 @@ const Home = ({ navigation }) => {
         <VStack space={4} alignItems="center" width={'100%'} height={'100%'} bg={'secondary.300'}>
             <View width={'100%'} height={'80%'} >
                 <InspirationCard />
-                <MoodCardDetails />
+                <MoodCardDetails data={moodData}/>
             </View>
             <View width={'100%'} height={'20%'}>
                 <Center>

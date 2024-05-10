@@ -3,5 +3,5 @@ import AddMode from "./AddMode/AddMode.js";
 
 export {
     Home,
-    AddMode
+    AddMode,
 }

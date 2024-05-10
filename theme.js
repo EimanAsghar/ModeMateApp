@@ -1,4 +1,4 @@
-import { extendTheme } from "native-base";
+import { Badge, extendTheme } from "native-base";
 
 const theme = extendTheme({
     colors: {
