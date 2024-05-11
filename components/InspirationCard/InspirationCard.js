@@ -1,6 +1,6 @@
 import { HStack, Container, IconButton, Text } from "native-base";
 import {
-    View, Image, Alert, FlatList
+    View, Image, Alert, FlatList, StyleSheet
 } from 'react-native';
 
 const inspirationList = [
@@ -12,9 +12,9 @@ const inspirationList = [
 ]
 export default function InspirationCard() {
     return (
-        <Container padding={4} margin={4}>
+        <Container padding={2} margin={2}>
             <View>
-                <Text fontSize={'lg'} >
+                <Text style={styles.heading} fontSize={'lg'} >
                     Inspirations...
                 </Text>
             </View>
@@ -37,3 +37,11 @@ export default function InspirationCard() {
     );
 }
 
+const styles = StyleSheet.create({
+    heading: {
+      fontSize: 20,
+      fontWeight: 'bold',
+      marginBottom: 10,
+    }
+  });
+  

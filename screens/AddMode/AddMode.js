@@ -1,10 +1,9 @@
-import { View, FlatList, StyleSheet, Dimensions, Alert } from "react-native";
+import { View, FlatList, StyleSheet, Alert } from "react-native";
 import React, { useState } from "react";
 import { Button, Icon, Center, VStack, Badge, HStack, Text, TextArea } from "native-base";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { ImageSlider } from '../../components';
 
-const { width, height } = Dimensions.get('window');
 
 const feelingList = ['Glad', 'Grateful', 'Delighted', 'Pleased', 'Optimistic', 'Exited', 'Joyful', 'Self-confidence'
     , 'Powerful', 'Upset', 'Heavy', 'Sorrowful', 'Crushed', 'Disgusted']
@@ -27,21 +26,18 @@ const AddMode = ({ navigation }) => {
     const [showPopup, setShowPopup] = useState(false);
     return (
         <VStack space={4} alignItems="center" width={'100%'} height={'100%'} bg={'secondary.300'}>
-            <View width={'100%'} height={'10%'}>
-                <Center style={{ padding: 30 }}>
-                    <Text fontSize={'xl'}>
+            <View width={'100%'} height={'60%'}>
+                <Center padding={10}>
+                    <Text style={styles.heading} >
                         How are you ?
                     </Text>
                 </Center>
-
-            </View>
-            <View width={'100%'} height={'50%'}>
                 <View style={{ flex: 1 }}>
                     <ImageSlider images={emoji} />
                 </View>
             </View>
-            <View width={'100%'} height={'20%'} style={{ padding: 20, margin: 4 }}>
-                <Text fontSize={'lg'} style={{ paddingBottom: 30 }}>
+            <View width={'100%'} height={'40%'} style={{ padding: 20, margin: 4 }}>
+                <Text fontSize={'lg'} style={styles.heading}>
                     Specify your feeling
                 </Text>
                 <HStack >
@@ -51,8 +47,10 @@ const AddMode = ({ navigation }) => {
                         ItemSeparatorComponent={<View style={{ width: 10 }} />}
                         showsHorizontalScrollIndicator={false}
                         renderItem={
-                            ({ item }) => <Badge variant={"solid"} >
-                                {item}
+                            ({ item }) => <Badge style={{ backgroundColor: '#FFFFFF', height: 40, width: 100, borderRadius: 6 }} variant={"solid"} >
+                                <Text color={'black'}>
+                                    {item}
+                                </Text>
                             </Badge>
                         }
                     />
@@ -60,7 +58,7 @@ const AddMode = ({ navigation }) => {
                 {showPopup && (
                     <View style={styles.popup}>
                         <VStack width={'100%'}>
-                            <Text paddingBottom={4}>
+                            <Text style={styles.heading} paddingBottom={4}>
                                 Add Note
                             </Text>
                             <TextArea
@@ -73,10 +71,11 @@ const AddMode = ({ navigation }) => {
                             />
                             <Center style={{ paddingTop: 20 }}>
                                 <Button size={'_custom'} colorScheme="primary" variant="rounded"
-                                onPress={()=>{
-                                    Alert.alert('Saved Succesfully')
-                                    setShowPopup(false)
-                                }}
+                                    onPress={() => {
+                                        Alert.alert('Saved Succesfully')
+                                        setShowPopup(false)
+                                        navigation.navigate('Home')
+                                    }}
                                 >
                                     <Text style={{ color: 'white' }}>
                                         Save
@@ -108,6 +107,11 @@ const AddMode = ({ navigation }) => {
 }
 
 const styles = StyleSheet.create({
+    heading: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginBottom: 10,
+    },
     popup: {
         position: 'absolute',
         left: 0,
@@ -119,7 +123,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderTopLeftRadius: 20,
         borderTopRightRadius: 30,
-        height: 300
+        height: 330
     },
     textInput: {
         flex: 1,

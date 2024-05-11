@@ -1,9 +1,9 @@
 import InspirationCard from "./InspirationCard/InspirationCard";
-import MoodCardDetails from "./MoodCardDetails/MoodCardDetails";
 import ImageSlider from './ImageSlider/ImageSlider';
+import MoodDetails from './MoodDetails/MoodDetails';
 
 export {
     InspirationCard,
-    MoodCardDetails,
-    ImageSlider
+    ImageSlider,
+    MoodDetails
 }

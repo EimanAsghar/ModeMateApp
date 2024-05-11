@@ -23,7 +23,7 @@ const ImageSlider = ({ images }) => {
                     resizeMode="cover"
                 />
                 <View>
-                    <Text>
+                    <Text style={styles.text}>
                         {item.title}
                     </Text>
                 </View>
@@ -57,6 +57,10 @@ const ImageSlider = ({ images }) => {
     );
 };
 const styles = StyleSheet.create({
+    text: {
+        fontSize: 20,
+        marginTop: 10,
+    },
     container: {
         flex: 1,
     },
@@ -84,7 +88,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 5,
     },
     activeDot: {
-        backgroundColor: 'blue',
+        backgroundColor: '#4C9FC1',
     },
 });
 

@@ -1,18 +1,19 @@
 import React, { useEffect } from "react";
 import SplashScreen from "react-native-splash-screen";
 import {
-    View, Text, Container
+    View, Text, StyleSheet
 } from 'react-native';
 import { Button, Icon, Center, VStack } from "native-base";
 import { Entypo } from '@expo/vector-icons';
-import { InspirationCard, MoodCardDetails } from "../../components";
+import { InspirationCard, MoodDetails } from "../../components";
 const Home = ({ navigation }) => {
 
     const moodData = [
-        {date: '1 May 2024', mode: 'AWESOME', details: 'Joyful', note: "good day", icon: require('../../assets/images/bigsmile.png') },
         {date: '2 May 2024', mode: 'Good', details: 'Joyful', note: "good day", icon: require('../../assets/images/smile_emoji.png') },
-        {date: '2 June 2024', mode: 'BAD', details: 'Heavy', note: "Not good day", icon: require('../../assets/images/sad.png') },
-        {date: '3 July 2024', mode: 'CRY', details: 'Heavy', note: "Not good day", icon: require('../../assets/images/cry.png') }
+        {date: '2 February 2024', mode: 'BAD', details: 'Heavy', note: "Not good day", icon: require('../../assets/images/sad.png') },
+        {date: '1 May 2025', mode: 'AWESOME', details: 'Joyful', note: "good day", icon: require('../../assets/images/bigsmile.png') },
+        {date: '3 July 2023', mode: 'CRY', details: 'Heavy', note: "Not good day", icon: require('../../assets/images/cry.png') },
+        {date: '2 February 2024', mode: 'BAD', details: 'Heavy', note: "Not good day", icon: require('../../assets/images/sad.png') },
     ]
 
     useEffect(() => {
@@ -25,7 +26,7 @@ const Home = ({ navigation }) => {
         <VStack space={4} alignItems="center" width={'100%'} height={'100%'} bg={'secondary.300'}>
             <View width={'100%'} height={'80%'} >
                 <InspirationCard />
-                <MoodCardDetails data={moodData}/>
+                <MoodDetails  data={moodData}/>
             </View>
             <View width={'100%'} height={'20%'}>
                 <Center>
@@ -42,5 +43,6 @@ const Home = ({ navigation }) => {
 
     )
 }
+
 
 export default Home;
