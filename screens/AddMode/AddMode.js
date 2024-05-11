@@ -1,6 +1,6 @@
-import { View, FlatList, StyleSheet, Alert } from "react-native";
+import { StyleSheet, Alert, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
-import { Button, Icon, Center, VStack, Badge, HStack, Text, TextArea } from "native-base";
+import { Button, Icon, Center, VStack, HStack, Text, TextArea, FlatList, View } from "native-base";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { ImageSlider } from '../../components';
 
@@ -24,6 +24,13 @@ const emoji = [
 const AddMode = ({ navigation }) => {
     const [text, setText] = useState('');
     const [showPopup, setShowPopup] = useState(false);
+    const [clickedIndexes, setClickedIndexes] = useState(new Array(feelingList.length).fill(false));
+
+    const handleBadge = (index) => {
+        const newClickedIndexes = [...clickedIndexes];
+        newClickedIndexes[index] = !newClickedIndexes[index];
+        setClickedIndexes(newClickedIndexes);
+    }
     return (
         <VStack space={4} alignItems="center" width={'100%'} height={'100%'} bg={'secondary.300'}>
             <View width={'100%'} height={'60%'}>
@@ -46,12 +53,22 @@ const AddMode = ({ navigation }) => {
                         horizontal={true}
                         ItemSeparatorComponent={<View style={{ width: 10 }} />}
                         showsHorizontalScrollIndicator={false}
+                        keyExtractor={(item, index) => index.toString()}
                         renderItem={
-                            ({ item }) => <Badge style={{ backgroundColor: '#FFFFFF', height: 40, width: 100, borderRadius: 6 }} variant={"solid"} >
-                                <Text color={'black'}>
-                                    {item}
-                                </Text>
-                            </Badge>
+                            ({ item, index }) => (
+                                <TouchableOpacity
+                                    onPress={() => handleBadge(index)}
+                                    style={[
+                                        styles.badge,
+                                        { backgroundColor: clickedIndexes[index] ? '#4C9FC1' : '#FFFFFF' }
+                                    ]}
+                                >
+                                    <Text style={{
+                                        color:  clickedIndexes[index] ? 'white' : 'black',
+                                        fontSize: 16
+                                    }}>{item}</Text>
+                                </TouchableOpacity>
+                            )
                         }
                     />
                 </HStack>
@@ -133,7 +150,13 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         marginRight: 10,
         paddingHorizontal: 10,
-    }
+    },
+    badge: {
+        padding: 8,
+        margin: 5,
+        borderRadius: 8,
+        alignItems: 'center',
+    },
 });
 
 export default AddMode;

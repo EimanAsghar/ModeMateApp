@@ -19,9 +19,9 @@ export default function InspirationCard() {
                 </Text>
             </View>
             <FlatList
-                alignItems="center" 
+                alignItems="center"
                 paddingTop={4}
-                 margin={2}
+                margin={2}
                 data={inspirationList}
                 horizontal={true}
                 ItemSeparatorComponent={<View style={{ width: 10 }} />}
@@ -39,9 +39,9 @@ export default function InspirationCard() {
 
 const styles = StyleSheet.create({
     heading: {
-      fontSize: 20,
-      fontWeight: 'bold',
-      marginBottom: 10,
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginBottom: 10,
     }
-  });
-  
+});
+
