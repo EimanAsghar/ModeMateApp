@@ -17,3 +17,7 @@ changes over time.
 
 
 ## Conclusion
+
+Drawing upon my prior experience with React, I found myself navigating the intricacies of React Native more easily. This familiarity not only sped up the learning process but also empowered me to overcome obstacles efficiently. Through continuous exploration and experimentation, I was able to quickly turn theoretical knowledge into practical application within a few days.
+
+I am grateful for the opportunity to undertake this project and further expand my skill set :smiley: .
