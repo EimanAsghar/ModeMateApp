@@ -11,7 +11,9 @@ changes over time.
 - Expo
 - NativeBase
   
-## Folder structure
+## Resources
+- React Native Doc: https://reactnative.dev/docs/getting-started
+- Native Base: https://nativebase.io/
 
 
 ## Conclusion
