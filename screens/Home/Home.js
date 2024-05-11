@@ -6,6 +6,7 @@ import {
 import { Button, Icon, Center, VStack } from "native-base";
 import { Entypo } from '@expo/vector-icons';
 import { InspirationCard, MoodDetails } from "../../components";
+
 const Home = ({ navigation }) => {
 
     const moodData = [
@@ -25,7 +26,9 @@ const Home = ({ navigation }) => {
     return (
         <VStack space={4} alignItems="center" width={'100%'} height={'100%'} bg={'secondary.300'}>
             <View width={'100%'} height={'80%'} >
+            
                 <InspirationCard />
+                
                 <MoodDetails  data={moodData}/>
             </View>
             <View width={'100%'} height={'20%'}>

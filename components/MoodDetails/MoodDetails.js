@@ -78,6 +78,7 @@ const MoodDetails = ({ data }) => {
             margin={4}
             data={flatListData}
             renderItem={renderItem}
+            showsVerticalScrollIndicator={false}
             keyExtractor={(item) => item.key}
         />
     );

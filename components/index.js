@@ -5,5 +5,5 @@ import MoodDetails from './MoodDetails/MoodDetails';
 export {
     InspirationCard,
     ImageSlider,
-    MoodDetails
+    MoodDetails,
 }
